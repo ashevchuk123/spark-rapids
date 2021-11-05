@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.nvidia.spark.rapids.shims.spark312
+package com.nvidia.spark.rapids.shims.spark312eep
 
 import com.nvidia.spark.rapids.{SparkShims, SparkShimVersion}
 
@@ -30,6 +30,6 @@ class SparkShimServiceProvider extends com.nvidia.spark.rapids.SparkShimServiceP
   }
 
   def buildShim: SparkShims = {
-    new Spark312Shims()
+    new Spark312eepShims()
   }
 }

@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.nvidia.spark.rapids.shims.spark312
+package com.nvidia.spark.rapids.shims.spark312eep
 
 import com.nvidia.spark.rapids._
 import com.nvidia.spark.rapids.shims.v2.SparkBaseShims
-import com.nvidia.spark.rapids.spark312.RapidsShuffleManager
+import com.nvidia.spark.rapids.spark312eep.RapidsShuffleManager
 import org.apache.parquet.schema.MessageType
 
 import org.apache.spark.sql.execution.datasources.parquet.ParquetFilters
 import org.apache.spark.sql.internal.SQLConf
 
-class Spark312Shims extends SparkBaseShims {
+class Spark312eepShims extends SparkBaseShims {
 
   override def getSparkShimVersion: ShimVersion = SparkShimServiceProvider.VERSION
 

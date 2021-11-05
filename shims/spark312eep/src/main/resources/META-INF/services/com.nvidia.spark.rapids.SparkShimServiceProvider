@@ -1,1 +1,1 @@
-com.nvidia.spark.rapids.shims.spark312.SparkShimServiceProvider
+com.nvidia.spark.rapids.shims.spark312eep.SparkShimServiceProvider
