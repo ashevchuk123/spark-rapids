@@ -16,17 +16,17 @@
 
 package com.nvidia.spark.rapids.shims.spark312eep
 
-import com.nvidia.spark.rapids.{SparkShims, SparkShimVersion}
+import com.nvidia.spark.rapids.{EEPShimVersion, SparkShims}
 
 object SparkShimServiceProvider {
-  val VERSION = SparkShimVersion(3, 1, 2)
+  val VERSION = EEPShimVersion(3, 1, 2, 0, "-eep-800")
   val VERSIONNAMES = Seq(s"$VERSION")
 }
 
 class SparkShimServiceProvider extends com.nvidia.spark.rapids.SparkShimServiceProvider {
 
   def matchesVersion(version: String): Boolean = {
-    SparkShimServiceProvider.VERSIONNAMES.contains(version)
+    version.contains("3.1.2.") && version.contains("-eep-")
   }
 
   def buildShim: SparkShims = {
