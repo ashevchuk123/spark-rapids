@@ -122,6 +122,15 @@
                                 <artifactItem>
                                     <groupId>com.nvidia</groupId>
                                     <artifactId>rapids-4-spark-aggregator_2.12</artifactId>
+                                    <classifier>spark312eep</classifier>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}/deps</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.nvidia</groupId>
+                                    <artifactId>rapids-4-spark-aggregator_2.12</artifactId>
                                     <classifier>spark311cdh</classifier>
                                     <version>${project.version}</version>
                                     <type>jar</type>
@@ -277,8 +286,20 @@
                                             <patternset refid="includeMeta"/>
                                         </unzip>
                                         <unzip
+                                                src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312eep.jar"
+                                                dest="${project.build.directory}/parallel-world/"
+                                        >
+                                            <patternset refid="includeMeta"/>
+                                        </unzip>
+                                        <unzip
                                                 src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312.jar"
                                                 dest="${project.build.directory}/parallel-world/spark312"
+                                        >
+                                            <patternset refid="excludeMeta"/>
+                                        </unzip>
+                                        <unzip
+                                                src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312eep.jar"
+                                                dest="${project.build.directory}/parallel-world/spark312eep"
                                         >
                                             <patternset refid="excludeMeta"/>
                                         </unzip>
@@ -444,6 +465,15 @@
                                 <artifactItem>
                                     <groupId>com.nvidia</groupId>
                                     <artifactId>rapids-4-spark-aggregator_2.12</artifactId>
+                                    <classifier>spark312eep</classifier>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}/deps</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.nvidia</groupId>
+                                    <artifactId>rapids-4-spark-aggregator_2.12</artifactId>
                                     <classifier>spark311cdh</classifier>
                                     <version>${project.version}</version>
                                     <type>jar</type>
@@ -587,6 +617,18 @@
                                             <patternset refid="excludeMeta"/>
                                         </unzip>
                                         <unzip
+                                                src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312eep.jar"
+                                                dest="${project.build.directory}/parallel-world/"
+                                        >
+                                            <patternset refid="includeMeta"/>
+                                        </unzip>
+                                        <unzip
+                                                src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312eep.jar"
+                                                dest="${project.build.directory}/parallel-world/spark312eep"
+                                        >
+                                            <patternset refid="excludeMeta"/>
+                                        </unzip>
+                                        <unzip
                                                 src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark311cdh.jar"
                                                 dest="${project.build.directory}/parallel-world/"
                                         >
@@ -717,6 +759,15 @@
                                 <artifactItem>
                                     <groupId>com.nvidia</groupId>
                                     <artifactId>rapids-4-spark-aggregator_2.12</artifactId>
+                                    <classifier>spark312eep</classifier>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}/deps</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.nvidia</groupId>
+                                    <artifactId>rapids-4-spark-aggregator_2.12</artifactId>
                                     <classifier>spark320</classifier>
                                     <version>${project.version}</version>
                                     <type>jar</type>
@@ -804,6 +855,25 @@
                                         <unzip
                                                 src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312.jar"
                                                 dest="${project.build.directory}/parallel-world/spark312"
+                                        >
+                                            <patternset id="excludes-spark311">
+                                                <excludesfile name="${project.basedir}/unshimmed-from-each-spark3xx.txt"/>
+                                                <excludesfile name="${project.basedir}/unshimmed-spark311.txt"/>
+                                            </patternset>
+                                        </unzip>
+
+                                        <unzip
+                                                src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312eep.jar"
+                                                dest="${project.build.directory}/parallel-world/"
+                                        >
+                                            <patternset id="includes-spark311">
+                                                <includesfile name="${project.basedir}/unshimmed-from-each-spark3xx.txt"/>
+                                                <includesfile name="${project.basedir}/unshimmed-spark311.txt"/>
+                                            </patternset>
+                                        </unzip>
+                                        <unzip
+                                                src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312eep.jar"
+                                                dest="${project.build.directory}/parallel-world/spark312eep"
                                         >
                                             <patternset id="excludes-spark311">
                                                 <excludesfile name="${project.basedir}/unshimmed-from-each-spark3xx.txt"/>
@@ -949,6 +1019,15 @@
                                     <groupId>com.nvidia</groupId>
                                     <artifactId>rapids-4-spark-aggregator_2.12</artifactId>
                                     <classifier>spark312</classifier>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}/deps</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.nvidia</groupId>
+                                    <artifactId>rapids-4-spark-aggregator_2.12</artifactId>
+                                    <classifier>spark312eep</classifier>
                                     <version>${project.version}</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
@@ -1121,6 +1200,18 @@
                                             <patternset refid="excludeMeta"/>
                                         </unzip>
                                         <unzip
+                                                src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312eep.jar"
+                                                dest="${project.build.directory}/parallel-world/"
+                                        >
+                                            <patternset refid="includeMeta"/>
+                                        </unzip>
+                                        <unzip
+                                                src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312eep.jar"
+                                                dest="${project.build.directory}/parallel-world/spark312eep"
+                                        >
+                                            <patternset refid="excludeMeta"/>
+                                        </unzip>
+                                        <unzip
                                                 src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark313.jar"
                                                 dest="${project.build.directory}/parallel-world/"
                                         >
@@ -1270,6 +1361,15 @@
                                     <groupId>com.nvidia</groupId>
                                     <artifactId>rapids-4-spark-aggregator_2.12</artifactId>
                                     <classifier>spark312</classifier>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}/deps</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.nvidia</groupId>
+                                    <artifactId>rapids-4-spark-aggregator_2.12</artifactId>
+                                    <classifier>spark312eep</classifier>
                                     <version>${project.version}</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
@@ -1456,6 +1556,18 @@
                                         <unzip
                                                 src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312.jar"
                                                 dest="${project.build.directory}/parallel-world/spark312"
+                                        >
+                                            <patternset refid="excludeMeta"/>
+                                        </unzip>
+                                        <unzip
+                                                src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312eep.jar"
+                                                dest="${project.build.directory}/parallel-world/"
+                                        >
+                                            <patternset refid="includeMeta"/>
+                                        </unzip>
+                                        <unzip
+                                                src="${project.build.directory}/deps/rapids-4-spark-aggregator_${scala.binary.version}-${project.version}-spark312eep.jar"
+                                                dest="${project.build.directory}/parallel-world/spark312eep"
                                         >
                                             <patternset refid="excludeMeta"/>
                                         </unzip>
