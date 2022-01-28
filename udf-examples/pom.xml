@@ -51,6 +51,12 @@
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-hive_${scala.binary.version}</artifactId>
+        <exclusions>
+            <exclusion>
+                <groupId>jdk.tools</groupId>
+                <artifactId>jdk.tools</artifactId>
+            </exclusion>
+        </exclusions>
     </dependency>
     <dependency>
       <groupId>org.scala-lang</groupId>
@@ -139,7 +145,7 @@
            <dependency>
                 <groupId>org.apache.hadoop</groupId>
                 <artifactId>hadoop-common</artifactId>
-                <version>${spark.version}</version>
+                <version>${hadoop.version}</version>
                 <scope>provided</scope>
            </dependency>
         </dependencies>

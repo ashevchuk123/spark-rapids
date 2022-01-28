@@ -72,11 +72,11 @@
 
     <modules>
         <module>dist</module>
-        <module>integration_tests</module>
+<!--        <module>integration_tests</module>-->
         <module>shims</module>
         <module>shuffle-plugin</module>
         <module>sql-plugin</module>
-        <module>tests</module>
+<!--        <module>tests</module>-->
         <module>udf-compiler</module>
         <module>udf-examples</module>
     </modules>
@@ -84,7 +84,7 @@
         <profile>
             <id>release301</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
                 <property>
                     <name>buildver</name>
                     <value>301</value>
@@ -462,6 +462,53 @@
             </modules>
         </profile>
         <profile>
+            <id>release312eep</id>
+            <activation>
+                <property>
+                    <name>buildver</name>
+                    <value>312eep</value>
+                </property>
+            </activation>
+            <properties>
+                <spark.version>${spark312eep.version}</spark.version>
+                <spark.test.version>${spark312eep.version}</spark.test.version>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>build-helper-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>add-profile-src-31+</id>
+                                <goals><goal>add-source</goal></goals>
+                                <phase>generate-sources</phase>
+                                <configuration>
+                                    <sources>
+                                        <source>${project.basedir}/src/main/301+-nondb/scala</source>
+                                        <source>${project.basedir}/src/main/301until320-all/scala</source>
+                                        <source>${project.basedir}/src/main/301until320-nondb/scala</source>
+                                        <source>${project.basedir}/src/main/311+-all/scala</source>
+                                        <source>${project.basedir}/src/main/311+-nondb/scala</source>
+                                        <source>${project.basedir}/src/main/311until320-all/scala</source>
+                                        <source>${project.basedir}/src/main/311until320-apache/scala</source>
+                                        <source>${project.basedir}/src/main/311until320-nondb/scala</source>
+                                        <source>${project.basedir}/src/main/301until330-all/scala</source>
+                                        <source>${project.basedir}/src/main/pre320-treenode/scala</source>
+                                    </sources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <modules>
+                <module>aggregator</module>
+                <module>api_validation</module>
+<!--                <module>tests-spark310+</module>-->
+            </modules>
+        </profile>
+        <profile>
             <id>release313</id>
             <activation>
                 <property>
@@ -731,12 +778,13 @@
     </profiles>
 
     <properties>
-        <buildver>301</buildver>
+        <buildver>312eep</buildver>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <java.major.version>8</java.major.version>
-        <spark.version>${spark301.version}</spark.version>
-        <spark.test.version>${spark.version}</spark.test.version>
+        <hadoop.version>2.7.6.100-eep-800</hadoop.version>
+        <spark.version>${spark312eep.version}</spark.version>
+        <spark.test.version>${spark312eep.version}</spark.test.version>
         <spark.version.classifier>spark${buildver}</spark.version.classifier>
         <cuda.version>cuda11</cuda.version>
         <cudf.version>21.12.0</cudf.version>
@@ -1316,6 +1364,17 @@
             </releases>
             <snapshots>
                 <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>repository_eep</id>
+            <name>EEP repo</name>
+            <url>http://repository.mapr.com/maven/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
     </repositories>
