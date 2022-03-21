@@ -136,6 +136,32 @@
             </properties>
         </profile>
         <profile>
+            <id>release312eep</id>
+            <activation>
+                <property>
+                    <name>buildver</name>
+                    <value>312eep</value>
+                </property>
+            </activation>
+            <properties>
+                <included_buildvers>${buildver}</included_buildvers>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-sql_${scala.binary.version}</artifactId>
+                    <version>${spark312eep.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>repository_eep</id>
+                    <url>http://repository.mapr.com/maven/</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+        <profile>
             <id>release311cdh</id>
             <activation>
                 <property>
