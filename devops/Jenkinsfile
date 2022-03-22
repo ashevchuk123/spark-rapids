@@ -20,7 +20,7 @@ env.MAKEFILE_ARGS=''
 env.PROJECT=''
 MEP_VER=''
 
-MAKEFILE_ARG_BRANCH_NAME = "spark1011fix"
+MAKEFILE_ARG_BRANCH_NAME = "branch-1.2.3-mapr"
 
 pipeline {
   agent none
