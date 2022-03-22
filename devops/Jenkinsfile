@@ -62,9 +62,9 @@ pipeline {
               }
             }
 
-            stage("Spark Deploy") {
+            stage("Spark Rapids Deploy") {
               when {
-                expression { params.'Spark Deploy' == true }
+                expression { params.'Spark Rapids Deploy' == true }
               }
               steps {
                 script {
