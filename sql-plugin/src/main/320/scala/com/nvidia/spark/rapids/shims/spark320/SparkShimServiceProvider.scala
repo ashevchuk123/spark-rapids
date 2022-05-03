@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.nvidia.spark.rapids.shims.spark320
+package com.nvidia.spark.rapids.shims.spark320eep
 
 import com.nvidia.spark.rapids.SparkShimVersion
 

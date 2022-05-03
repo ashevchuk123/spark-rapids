@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, NVIDIA CORPORATION.
+ * Copyright (c) 2021-2022, NVIDIA CORPORATION.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 
-package com.nvidia.spark.rapids.spark320eep
+package com.nvidia.spark.rapids.shims.spark320eep
 
-import org.apache.spark.SparkConf
-import org.apache.spark.sql.rapids.shims.spark320eep.ProxyRapidsShuffleInternalManager
+import com.nvidia.spark.rapids.EEPShimVersion
 
-/** A shuffle manager optimized for the RAPIDS Plugin for Apache Spark. */
-sealed class RapidsShuffleManager(
-    conf: SparkConf,
-    isDriver: Boolean) extends ProxyRapidsShuffleInternalManager(conf, isDriver) {
+object SparkShimServiceProvider {
+  val VERSION = EEPShimVersion(3, 2, 0, 0, "-eep-8")
+  val VERSIONNAMES = Seq(s"$VERSION")
+}
+
+class SparkShimServiceProvider extends com.nvidia.spark.rapids.SparkShimServiceProvider {
+
+  override def getShimVersion: EEPShimVersion = SparkShimServiceProvider.VERSION
+
+  def matchesVersion(version: String): Boolean = {
+    version.contains("3.2.0.") && version.contains("-eep-")
+  }
 }
