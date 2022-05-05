@@ -27,13 +27,13 @@ The plugin is tested on the following architectures:
 
 Software Requirements:
 
-	OS: Ubuntu 18.04, Ubuntu 20.04 or CentOS 7, CentOS 8
+	OS: Ubuntu 18.04, Ubuntu 20.04 or CentOS 7, CentOS 8 (no Rocky here)
 
 	CUDA & NVIDIA Drivers*: 11.x & v450.80.02+
 
 	Apache Spark 3.1.1, 3.1.2, 3.1.3, 3.2.0, 3.2.1, Databricks 9.1 ML LTS or 10.4 ML LTS Runtime and GCP Dataproc 2.0
 
-	Python 3.6+, Scala 2.12, Java 8
+	Python 3.6+, Scala 2.12, Java 8 (we don't support Java 8)
 
 *Some hardware may have a minimum driver version greater than v450.80.02+.  Check the GPU spec sheet
 for your hardware's minimum driver version.

@@ -15,7 +15,7 @@ This is a quick start guide which uses default settings which may be different f
 
 Kubernetes requires a Docker image to run Spark.  Generally everything needed is in the Docker
 image - Spark, the RAPIDS Accelerator for Spark jars, and the discovery script.  See this
-[Dockerfile.cuda](Dockerfile.cuda) example.
+[Dockerfile.cuda](Dockerfile.cuda) example. (see my comments here inline in the Dockerfile.cuda)
 
 
 ## Prerequisites
@@ -32,6 +32,7 @@ how to install a Kubernetes cluster with NVIDIA GPU support.
 
 On a client machine which has access to the Kubernetes cluster:
 
+// We distribute spark as .rpm package, not as an archive
 1. [Download Apache Spark](https://spark.apache.org/downloads.html).
    Supported versions of Spark are listed on the [RAPIDS Accelerator download page](../download.md).  Please note that only
    Scala version 2.12 is currently supported by the accelerator. 

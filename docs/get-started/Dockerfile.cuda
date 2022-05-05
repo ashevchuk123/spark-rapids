@@ -14,10 +14,16 @@
 # limitations under the License.
 #
 
+### We have our own rocky-based base image, so we need clear doc for 'cuda' image build steps
+### Public https://gitlab.com/nvidia/container-images/cuda repo can't be utilized as-is because:
+### - there is no pure dockerfile but a template instead (https://gitlab.com/nvidia/container-images/cuda/-/blob/master/templates/redhat/base-dockerfile.j2), so it's meant to be built with it's own build scripts only
+### - there is no rocky8 support (we can use centos8 though)
+
 FROM nvidia/cuda:11.0-devel-ubuntu18.04
 ARG spark_uid=185
 
-# Install java dependencies 
+# Install java dependencies
+### Not an option for us, as we need java-11
 RUN apt-get update && apt-get install -y --no-install-recommends openjdk-8-jdk openjdk-8-jre
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
 ENV PATH $PATH:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/bin:/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin
@@ -43,6 +49,7 @@ RUN set -ex && \
     echo "auth required pam_wheel.so use_uid" >> /etc/pam.d/su && \
     chgrp root /etc/passwd && chmod ug+rw /etc/passwd
 
+# We have custom folders structure and entrypoint scripts for spark
 COPY spark/jars /opt/spark/jars
 COPY spark/bin /opt/spark/bin
 COPY spark/sbin /opt/spark/sbin
