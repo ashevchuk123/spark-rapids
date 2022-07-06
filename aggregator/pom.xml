@@ -96,6 +96,10 @@
                             <pattern>com.google.flatbuffers</pattern>
                             <shadedPattern>${rapids.shade.package}.com.google.flatbuffers</shadedPattern>
                         </relocation>
+                        <relocation>
+                            <pattern>org.apache.orc</pattern>
+                            <shadedPattern>${rapids.shade.package}.org.apache.orc</shadedPattern>
+                        </relocation>
                     </relocations>
                     <filters>
                         <filter>

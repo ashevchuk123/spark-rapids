@@ -463,6 +463,7 @@
                 </property>
             </activation>
             <properties>
+                <orc.version>1.6.11</orc.version>
                 <spark.version>${spark320eep.version}</spark.version>
                 <spark.test.version>${spark320eep.version}</spark.test.version>
                 <parquet.hadoop.version>1.12.2</parquet.hadoop.version>
@@ -480,7 +481,6 @@
                                 <configuration>
                                     <sources>
                                         <source>${project.basedir}/src/main/320eep/scala</source>
-                                        <source>${project.basedir}/src/main/311+-all/scala</source>
                                         <source>${project.basedir}/src/main/311+-nondb/scala</source>
                                         <source>${project.basedir}/src/main/311until330-all/scala</source>
                                         <source>${project.basedir}/src/main/311until330-nondb/scala</source>
@@ -491,19 +491,17 @@
                                         <source>${project.basedir}/src/main/320until330-all/scala</source>
                                         <source>${project.basedir}/src/main/320until330-nondb/scala</source>
                                         <source>${project.basedir}/src/main/320until330-noncdh/scala</source>
-                                        <source>${project.basedir}/src/main/321+/scala</source>
-                                        <source>${project.basedir}/src/main/321until330-all/scala</source>
                                         <source>${project.basedir}/src/main/post320-treenode/scala</source>
                                     </sources>
                                 </configuration>
                             </execution>
                             <execution>
-                                <id>add-test-profile-src-321</id>
+                                <id>add-test-profile-src-320</id>
                                 <goals><goal>add-test-source</goal></goals>
                                 <phase>generate-test-sources</phase>
                                 <configuration>
                                     <sources>
-                                        <source>${project.basedir}/src/test/321/scala</source>
+                                        <source>${project.basedir}/src/test/320eep/scala</source>
                                     </sources>
                                 </configuration>
                             </execution>
