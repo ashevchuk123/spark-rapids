@@ -30,7 +30,7 @@ import org.apache.spark.internal.Logging
 import org.apache.spark.sql.catalyst.plans.logical.LogicalPlan
 import org.apache.spark.sql.catalyst.rules.Rule
 import org.apache.spark.sql.execution.{ColumnarRule, SparkPlan}
-import org.apache.spark.util.MutableURLClassLoader
+import org.apache.spark.util.{MutableURLClassLoader, ParentClassLoader}
 
 /*
     Plugin jar uses non-standard class file layout. It consists of three types of areas,
