@@ -91,7 +91,7 @@ pipeline {
                   -v /root/.ssh:/root/.ssh:rw \
                   -v ${WORKSPACE}/settings-deploy.xml:/root/.m2/settings.xml:ro") {
                     sh """
-                      mvn -B -D${params.BUILDVER} -Drat.skip=true -DskipTests deploy -DaltDeploymentRepository=mapr-snapshots::default::${MAPR_MAVEN_REPO};
+                      mvn -B -Dbuildver=${params.BUILDVER} -Drat.skip=true -DskipTests deploy -DaltDeploymentRepository=mapr-snapshots::default::${MAPR_MAVEN_REPO};
                       """
                     }
                 }
