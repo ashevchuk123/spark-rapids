@@ -539,6 +539,19 @@
                 <spark.test.version>${spark330eep.version}</spark.test.version>
                 <parquet.hadoop.version>1.12.2</parquet.hadoop.version>
             </properties>
+            <repositories>
+                <repository>
+                    <id>mapr_maven_snapshots_repo</id>
+                    <name>mapr maven snapshots repo</name>
+                    <url>http://admin:admin123@df-mvn-dev.mip.storage.hpecorp.net/nexus/content/repositories/snapshots/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
             <build>
                 <plugins>
                     <plugin>
