@@ -33,10 +33,10 @@
 
     <properties>
         <hadoop.version>3.3.3</hadoop.version>
-        <spark.version>${spark311.version}</spark.version>
-        <spark.test.version>${spark311.version}</spark.test.version>
-        <spark.version.classifier>spark311</spark.version.classifier>
-        <target.classifier>spark311</target.classifier>
+        <spark.version>${spark331eep.version}</spark.version>
+        <spark.test.version>${spark331eep.version}</spark.test.version>
+        <spark.version.classifier>spark331eep</spark.version.classifier>
+        <target.classifier>spark331eep</target.classifier>
         <ui.cache.dir>${project.build.directory}/ui-dependencies-cache</ui.cache.dir>
         <ui.resources.relative>src/main/resources/ui</ui.resources.relative>
         <ui.resources.dir>${project.basedir}/${ui.resources.relative}</ui.resources.dir>
