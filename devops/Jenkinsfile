@@ -35,7 +35,7 @@ pipeline {
   parameters {
     choice(name: 'BUILD_TYPE', choices: ['Dev','EBF','Release'], description: 'default - Dev. EBF and Release args you can use only in release branches')
     string(name: 'MAKEFILE_ENV_VARS', defaultValue: '', description: 'Variables you can pass to makefile (command will be: make {THIS VAR} {project-name}). Please DO NOT put component_branch_name')
-    string(name: 'BUILDVER', defaultValue: '320eep', description: '')
+    string(name: 'BUILDVER', defaultValue: '331eep', description: '')
     booleanParam(name: 'Spark Rapids Deploy', defaultValue: true, description: 'Uncheck and Jenkins will skip ./build/mvn deploy')
   }
   stages {
